@@ -49,13 +49,4 @@ body{
 .fa-star.active{
   color: rgb(245, 179, 12);
 }
-.caption{
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%);
-  top: 37%;
-  height: 50px;
-  display: flex;
-  overflow: hidden;
-}
 
