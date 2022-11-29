@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Launch!</title>
+</head>
+<body>
+  <div class="canvas">
+    <div class="rocket">
+      <img src="spacex.png" alt="falconheavy"><span></span>
+    </div>
+  </div>
+  <script>
+    function stars(){
+      let count=50;
+      let canvas = document.querySelector('.canvas');
+      let i=0;
+      
+      while(i<count){
+        let star =document.createElement('i');
+        let x = Math.floor(Math.random()*window.innerWidth);
+        let duration = Math.random()*1;
+        let h =Math.random()*100;
+        star.style.left = x+'px';
+        star.style.width= 1+'px';
+        star.style.height = h+'px';
+
+        star.style.animationDuration = duration+'s';
+
+        canvas.appendChild(star);
+        i++;
+      }
+    }
+    stars();
+  </script>
+</body>
+</html>
