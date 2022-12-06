@@ -1,0 +1,90 @@
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  background-color: rgba(185, 156, 156, 0.1);
+  overflow: hidden;
+  
+}
+.vid{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media(min-aspect-ratio:16/9){
+  .vid{
+    width: 100%;
+    height: auto;
+  }
+}
+@media(max-aspect-ratio:16/9){
+  .vid{
+    width: auto;
+    height: 100%;
+  }
+}
+h2{
+  color: rgb(250, 210, 210) ;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+}
+.year{
+  font-size: 5.5em;
+  color: rgb(237, 215, 215);
+  font-weight:600;
+  transition: 0.5s;
+}
+.year:hover{
+  -webkit-text-stroke: 0.1px rgb(250, 205, 205);
+  color: transparent;
+}
+.countdown{
+  margin: 30px;
+  background-color: rgba(89, 85, 85, 0.1);
+  width: 100%;
+  color: rgb(236, 213, 206);
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.countdown div{
+  margin: 0 15px;
+  font-size: 2.8em;
+  font-weight: 500;
+  margin-top: -25px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+}
+.countdown div::before{
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  font-size: .35em;
+  line-height: 35px;
+  text-transform:uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  width: 100%;
+  height: 35px;
+}
+.countdown #day::before{
+  content: "days";
+}
+.countdown #hour::before{
+  content: "hours";
+}
+.countdown #minute::before{
+  content: "minutes";
+}
+.countdown #second::before{
+  content: "seconds";
+}
