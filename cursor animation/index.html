@@ -6,11 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cursor animation</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="background">
   <div class="cursor"></div>
   <section class="main">
     <h1>Cursor Animation</h1>
   </section>
+  </div>
+  <script type="text/javascript">
+    const curs = document.querySelector(".cursor");
+    var timeout;
+    
+    //cursor movement
+    document.addEventListener("mousemove",(e)=>{
+      let x = e.pageX;
+      let y = e.pageY;
+
+      curs.style.top = y+'px';
+      curs.style.left = x+'px';
+      curs.style.display = 'block';
+
+       //stop animation
+    function mouseStopped(){
+      curs.style.display = 'none';
+    }
+    //hide animation
+    clearTimeout(timeout)
+    timeout = setTimeout(mouseStopped,1000)
+    });
+
+    //stop animation off the screen
+    document.addEventListener("mouseout",()=>{
+      curs.style.display = 'none';
+
+    });
+   
+  </script>
 </body>
 </html>
